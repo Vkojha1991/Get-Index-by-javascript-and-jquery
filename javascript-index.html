@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+	<head>
+		<style>
+			li {
+				font-size:18px;
+				cursor:pointer;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+			<ul id="data">
+				<li>Test 1</li>
+				<li>Test 2</li>
+				<li>Test 3</li>
+				<li>Test 4</li>
+				<li>Test 5</li>
+				<li>Test 6</li>
+				<li>Test 7</li>
+				<li>Test 8</li>
+				<li>Test 9</li>
+				<li>Test 10</li>
+			</ul>
+
+			<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+			<script>
+				$(document).ready(function(){
+					$('#data li').on('click', function(){
+						alert($(this).index());
+					});
+				});
+			</script> -->
+
+			<script>
+				var x = document.getElementById('data');
+				var i;
+				var j = x.children.length;
+				for(var i=0; i < j; i++) {
+					(function(index) {
+						x.children[i].onclick = function() {
+							alert(index);
+						}
+					})(i);
+				}
+			</script>
+	</body>
+</html>
